@@ -1,20 +1,25 @@
 package com.example;
 
-import org.junit.Test;
-import static org.junit.Assert.assertEquals;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class SumTest {
+
     @Test
     public void testAddNumbers() {
-        // Arrange
-        int num1 = 5;
-        int num2 = 10;
-        int expectedSum = 15;
+        // Test case 1: both numbers are positive
+        assertEquals(5, Sum.addNumbers(2, 3));
 
-        // Act
-        int actualSum = Sum.addNumbers(num1, num2);
+        // Test case 2: both numbers are negative
+        assertEquals(-5, Sum.addNumbers(-2, -3));
 
-        // Assert
-        assertEquals(expectedSum, actualSum);
+        // Test case 3: one positive, one negative number
+        assertEquals(0, Sum.addNumbers(2, -2));
+
+        // Test case 4: zero and a positive number
+        assertEquals(2, Sum.addNumbers(0, 2));
+
+        // Test case 5: zero and a negative number
+        assertEquals(-2, Sum.addNumbers(0, -2));
     }
 }
